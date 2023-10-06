@@ -47,23 +47,37 @@
         Include the number of Pixels, and the density of the device to obtain
         the Density-independent pixels (dp) value.
       </p>
+      <math>
+        <mi>dp</mi>    
+        <mo>=</mo> 
+        <mn>
+          <mrow>
+            <mo>(</mo><mi>width in pixels</mi> <mo>*</mo> <mi>160</mi>) <mo>/</mo> <mi>screen density</mi>
+          </mrow>
+        </mn>
+      </math>
+      <br>
       <form action="">
         <div class="form_control">
-          <label for="pixels">Width in Pixels</label>
+          <label for="pixels">Screen Width in Pixels</label>
           <input type="number" name="pixels" id="pixels" required />
         </div>
         <div class="form_control">
-          <label for="density">Density</label>
-          <input type="number" name="density" id="density" required />
-        </div>
-        <div class="form_control">
-          <label for="result">Result</label>
-          <input type="text" id="result" readonly />
-        </div>
+          <label for="density" >Pixels Density of the device</label>
+          <input type="number" name="density" id="density" required  data-toggle="tooltip" data-placement="left" title="The number of pixels that fit into an inch"/>
+        </div>        
         <div class="form_control">
             <input type="button" value="Calculate" id="submit" class="button" />
         </div>
+        <div class="form_control">
+          <label for="result" data-toggle="tooltip" data-placement="left" title="Flexible units that scale to uniform dimensions on any screen. ">Result Density-independent pixels (dp) </label>
+          <input type="text" id="result" readonly />
+        </div>
       </form>
+      <footer>
+        <small>Note: When writing CSS, use px wherever dp or sp is stated. Dp only needs to be used in developing for Android.</small>
+        <p>Formula obtained from <a href="https://m1.material.io/layout/units-measurements.html#units-measurements-density-independent-pixels-dp">Material Design documentation.</a></p>
+      </footer>
     </div>
     <script>
       const submitButton = document.getElementById("submit");
