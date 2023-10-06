@@ -1,46 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DP calculator</title>    
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_package_v0.16//apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_package_v0.16/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_package_v0.16//favicon-16x16.png">
-    <link rel="manifest" href="assets/favicon_package_v0.16//site.webmanifest">
-    <link rel="mask-icon" href="assets/favicon_package_v0.16//safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-</head>
-<body>
-    <h1>Pixels to DP Calculator</h1>
-    <p>Include the number of Pixels, and the density of the device to obtain the Density-independent pixels (dp) value</p>
-    <form action="">
-        <label for="pixels">Width in Pixels</label>
-        <input type="number" name="pixels" id="pixels" required>
-        <label for="density">Density</label>
-        <input type="number" name="density" id="density" required>
-        <input type="button" value="Calculate" id="submit" class="button">
-        <label for="result">Result</label>
-        <input type="text" id="result">        
-    </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DP calculator</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon_package_v0.16//apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon_package_v0.16/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon_package_v0.16//favicon-16x16.png"
+    />
+    <link
+      rel="manifest"
+      href="assets/favicon_package_v0.16//site.webmanifest"
+    />
+    <link
+      rel="mask-icon"
+      href="assets/favicon_package_v0.16//safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pixels to DP Calculator</h1>
+      <p>
+        Include the number of Pixels, and the density of the device to obtain
+        the Density-independent pixels (dp) value.
+      </p>
+      <form action="">
+        <div class="form_control">
+          <label for="pixels">Width in Pixels</label>
+          <input type="number" name="pixels" id="pixels" required />
+        </div>
+        <div class="form_control">
+          <label for="density">Density</label>
+          <input type="number" name="density" id="density" required />
+        </div>
+        <div class="form_control">
+          <label for="result">Result</label>
+          <input type="text" id="result" readonly />
+        </div>
+        <div class="form_control">
+            <input type="button" value="Calculate" id="submit" class="button" />
+        </div>
+      </form>
+    </div>
     <script>
-        const submitButton = document.getElementById('submit');
-        const pixels = document.getElementById('pixels');
-        const density = document.getElementById('density');
-        const result = document.getElementById('result');
-        let calculation = 0;
+      const submitButton = document.getElementById("submit");
+      const pixels = document.getElementById("pixels");
+      const density = document.getElementById("density");
+      const result = document.getElementById("result");
+      let calculation = 0;
 
-        submitButton.addEventListener("click", function (e) {
-            // dp = (width in pixels * 160) / screen density
-            calculation = (pixels.value * 160) / density.value ;
-            // console.log(e.currentTarget === this); // logs `true`
-            if(calculation){
-                console.log(calculation);
-                result.value=calculation;
-            }            
-        });
-
+      submitButton.addEventListener("click", function (e) {
+        // dp = (width in pixels * 160) / screen density
+        calculation = (pixels.value * 160) / density.value;
+        // console.log(e.currentTarget === this); // logs `true`
+        if (calculation) {
+          console.log(calculation);
+          result.value = calculation;
+        }
+      });
     </script>
-</body>
+  </body>
 </html>

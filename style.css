@@ -1,0 +1,40 @@
+body{
+    background-color: #f8f8f8;    
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    font-family: 'Raleway', sans-serif;
+}
+
+.container{
+    background-color: white;
+    max-width: 350px;
+    padding: 1rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+label{
+    display: block;    
+    margin-bottom: 0.8rem;
+}
+
+input{    
+    border: 1px solid lightgray;
+    height: 32px;  
+    width: 100%;
+    padding: 0px;
+}
+
+.form_control{
+    margin-bottom: 1rem;
+}
+
+.button{    
+    height: 32px;
+    width: 100%;    
+}
