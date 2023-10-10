@@ -39,6 +39,16 @@ input{
     box-sizing: border-box;
 }
 
+/* Chromium & Safari */
+input[type="number"]::-webkit-inner-spin-button{
+    display: none;
+}
+
+/* Firefox */
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+
 .form_control{
     margin-bottom: 1rem;
 }
